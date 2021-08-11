@@ -10,7 +10,7 @@
             <aas:submodelRefs>
                 <aas:submodelRef>
                     <aas:keys>
-                        <aas:key idType="Iri" type="Submodel">http.//i40.customer.com/type/1/1/7A7104BDAB57E184</aas:key>
+                        <aas:key idType="Iri" type="Submodel">http://i40.customer.com/type/1/1/7A7104BDAB57E184</aas:key>
                     </aas:keys>
                 </aas:submodelRef>
                 <aas:submodelRef>
@@ -79,8 +79,6 @@
                             <IEC61360:langString lang="EN">Title</IEC61360:langString>
                             <IEC61360:langString lang="DE">Titel</IEC61360:langString>
                         </IEC61360:shortName>
-                        <IEC61360:unit/>
-                        <IEC61360:sourceOfDefinition/>
                     </aas:dataSpecificationIEC61360>
                 </aas:dataSpecificationContent>
                 <aas:dataSpecification>
@@ -108,8 +106,6 @@
                             <IEC61360:langString lang="EN">DigitalFile</IEC61360:langString>
                             <IEC61360:langString lang="DE">DigitaleDatei</IEC61360:langString>
                         </IEC61360:shortName>
-                        <IEC61360:unit/>
-                        <IEC61360:sourceOfDefinition/>
                     </aas:dataSpecificationIEC61360>
                 </aas:dataSpecificationContent>
                 <aas:dataSpecification>
@@ -123,7 +119,6 @@
             <aas:idShort>MaxRotationSpeed</aas:idShort>
             <aas:category>PROPERTY</aas:category>
             <aas:administration>
-            	<aas:version></aas:version>
                 <aas:revision>2</aas:revision>
             </aas:administration>
             <aas:identification idType="Irdi">0173-1#02-BAA120#008</aas:identification>
@@ -136,7 +131,6 @@
                                 <IEC61360:key idType="Irdi" type="GlobalReference">0173-1#05-AAA650#002</IEC61360:key>
                             </IEC61360:keys>
                         </IEC61360:unitId>
-                        <IEC61360:sourceOfDefinition/>
                         <IEC61360:dataType>RealMeasure</IEC61360:dataType>
                         <IEC61360:definition>
                             <IEC61360:langString lang="de">HöchstezulässigeDrehzahl,mitwelcherderMotoroderdieSpeiseinheitbetriebenwerdendarf</IEC61360:langString>
@@ -168,7 +162,6 @@
                                 <IEC61360:key idType="Irdi" type="GlobalReference">0173-1#05-AAA650#002</IEC61360:key>
                             </IEC61360:keys>
                         </IEC61360:unitId>
-                        <IEC61360:sourceOfDefinition/>
                         <IEC61360:dataType>RealMeasure</IEC61360:dataType>
                         <IEC61360:definition>
                             <IEC61360:langString lang="DE">Aktuelle Drehzahl, mitwelcher der Motor oder die Speiseinheit betrieben wird</IEC61360:langString>
@@ -197,7 +190,6 @@
             <aas:embeddedDataSpecification>
                 <aas:dataSpecificationContent>
                     <aas:dataSpecificationIEC61360>
-                    	<IEC61360:unit></IEC61360:unit>
                         <IEC61360:sourceOfDefinition>[ISO15519-1:2010]</IEC61360:sourceOfDefinition>
                         <IEC61360:dataType>String</IEC61360:dataType>
                         <IEC61360:definition>

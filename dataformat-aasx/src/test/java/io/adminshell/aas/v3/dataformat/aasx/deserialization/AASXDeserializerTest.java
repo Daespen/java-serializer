@@ -38,7 +38,7 @@ import io.adminshell.aas.v3.dataformat.SerializationException;
 import io.adminshell.aas.v3.dataformat.aasx.AASXDeserializer;
 import io.adminshell.aas.v3.dataformat.aasx.AASXSerializer;
 import io.adminshell.aas.v3.dataformat.aasx.InMemoryFile;
-import io.adminshell.aas.v3.dataformat.aasx.serialization.AASSimple;
+import io.adminshell.aas.v3.dataformat.model.AASSimple;
 
 public class AASXDeserializerTest {
 
@@ -48,7 +48,7 @@ public class AASXDeserializerTest {
     @Test
     public void testRoundTrip() throws SerializationException, IOException, InvalidFormatException, DeserializationException, ParserConfigurationException, SAXException {
         List<InMemoryFile> fileList = new ArrayList<>();
-        byte[] operationManualContent = { 0, 1, 2, 3, 4 };
+        byte[] operationManualContent = {0, 1, 2, 3, 4};
         InMemoryFile inMemoryFile = new InMemoryFile(operationManualContent, "/aasx/OperatingManual.pdf");
         fileList.add(inMemoryFile);
 
