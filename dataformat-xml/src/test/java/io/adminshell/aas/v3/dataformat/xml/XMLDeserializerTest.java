@@ -21,20 +21,33 @@ import java.io.FileNotFoundException;
 
 import org.junit.Test;
 
+import io.adminshell.aas.v3.dataformat.AASFull;
+import io.adminshell.aas.v3.dataformat.AASSimple;
 import io.adminshell.aas.v3.dataformat.DeserializationException;
 import io.adminshell.aas.v3.model.AssetAdministrationShellEnvironment;
 
 public class XMLDeserializerTest {
+    public static final java.io.File AASFULL_FILE = XmlSerializerTest.AASFULL_FILE;
+    public static final java.io.File AASSIMPLE_FILE = XmlSerializerTest.AASSIMPLE_FILE;
 
     @Test
     public void deserializeAASSimple() throws Exception {
-        AssetAdministrationShellEnvironment env = new XmlDeserializer().read(AASSimple.FILE);
+        AssetAdministrationShellEnvironment env = new XmlDeserializer().read(AASSIMPLE_FILE);
+        assertEquals(AASSimple.ENVIRONMENT.getAssetAdministrationShells(), env.getAssetAdministrationShells());
+        System.out.println(new XmlSerializer().write(AASSimple.ENVIRONMENT));
+        Object a = AASSimple.ENVIRONMENT.getConceptDescriptions().get(0);
+        Object b = env.getConceptDescriptions().get(0);
+        assertEquals(a, b);
+        assertEquals(AASSimple.ENVIRONMENT.getConceptDescriptions().get(1), env.getConceptDescriptions().get(1));
+        assertEquals(AASSimple.ENVIRONMENT.getConceptDescriptions().get(2), env.getConceptDescriptions().get(2));
+        assertEquals(AASSimple.ENVIRONMENT.getConceptDescriptions(), env.getConceptDescriptions());
+        assertEquals(AASSimple.ENVIRONMENT.getSubmodels(), env.getSubmodels());
         assertEquals(AASSimple.ENVIRONMENT, env);
     }
 
     @Test
     public void deserializeAASFull() throws FileNotFoundException, DeserializationException {
-        AssetAdministrationShellEnvironment env = new XmlDeserializer().read(AASFull.FILE);
+        AssetAdministrationShellEnvironment env = new XmlDeserializer().read(AASFULL_FILE);
         assertEquals(AASFull.ENVIRONMENT, env);
     }
 }

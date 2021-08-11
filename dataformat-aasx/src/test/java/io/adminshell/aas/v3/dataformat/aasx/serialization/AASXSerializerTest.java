@@ -32,6 +32,7 @@ import javax.xml.transform.TransformerException;
 import org.junit.Before;
 import org.junit.Test;
 
+import io.adminshell.aas.v3.dataformat.AASSimple;
 import io.adminshell.aas.v3.dataformat.SerializationException;
 import io.adminshell.aas.v3.dataformat.aasx.AASXSerializer;
 import io.adminshell.aas.v3.dataformat.aasx.InMemoryFile;
@@ -45,7 +46,7 @@ public class AASXSerializerTest {
 
     @Before
     public void setup() throws IOException {
-        byte[] operationManualContent = { 0, 1, 2, 3, 4 };
+        byte[] operationManualContent = {0, 1, 2, 3, 4};
         InMemoryFile file = new InMemoryFile(operationManualContent, "aasx/OperatingManual.pdf");
         fileList.add(file);
     }

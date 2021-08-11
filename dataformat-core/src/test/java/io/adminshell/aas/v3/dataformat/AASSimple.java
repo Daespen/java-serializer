@@ -13,49 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.adminshell.aas.v3.dataformat.xml;
+package io.adminshell.aas.v3.dataformat;
 
+import io.adminshell.aas.v3.model.*;
+import io.adminshell.aas.v3.model.impl.*;
 import java.util.Arrays;
-
-import io.adminshell.aas.v3.model.Asset;
-import io.adminshell.aas.v3.model.AssetAdministrationShell;
-import io.adminshell.aas.v3.model.AssetAdministrationShellEnvironment;
-import io.adminshell.aas.v3.model.AssetKind;
-import io.adminshell.aas.v3.model.ConceptDescription;
-import io.adminshell.aas.v3.model.DataTypeIEC61360;
-import io.adminshell.aas.v3.model.IdentifierType;
-import io.adminshell.aas.v3.model.KeyElements;
-import io.adminshell.aas.v3.model.KeyType;
-import io.adminshell.aas.v3.model.LangString;
-import io.adminshell.aas.v3.model.ModelingKind;
-import io.adminshell.aas.v3.model.Submodel;
-import io.adminshell.aas.v3.model.impl.DefaultAdministrativeInformation;
-import io.adminshell.aas.v3.model.impl.DefaultAsset;
-import io.adminshell.aas.v3.model.impl.DefaultAssetAdministrationShell;
-import io.adminshell.aas.v3.model.impl.DefaultAssetAdministrationShellEnvironment;
-import io.adminshell.aas.v3.model.impl.DefaultAssetInformation;
-import io.adminshell.aas.v3.model.impl.DefaultConceptDescription;
-import io.adminshell.aas.v3.model.impl.DefaultDataSpecificationIEC61360;
-import io.adminshell.aas.v3.model.impl.DefaultEmbeddedDataSpecification;
-import io.adminshell.aas.v3.model.impl.DefaultFile;
-import io.adminshell.aas.v3.model.impl.DefaultIdentifier;
-import io.adminshell.aas.v3.model.impl.DefaultIdentifierKeyValuePair;
-import io.adminshell.aas.v3.model.impl.DefaultKey;
-import io.adminshell.aas.v3.model.impl.DefaultProperty;
-import io.adminshell.aas.v3.model.impl.DefaultReference;
-import io.adminshell.aas.v3.model.impl.DefaultSubmodel;
-import io.adminshell.aas.v3.model.impl.DefaultSubmodelElementCollection;
 
 public class AASSimple {
 
-    public static final java.io.File FILE = new java.io.File("src/test/resources/xmlExample.xml");
-    public static final java.io.File FILE_WITH_TEST_NAMESPACE = new java.io.File("src/test/resources/xmlExampleWithModifiedPrefix.xml");
-
-    // AAS
+    //AAS
     public static final String AAS_ID = "ExampleMotor";
     public static final String AAS_IDENTIFIER = "http://customer.com/aas/9175_7013_7091_9168";
 
-    // SUBMODEL_TECHNICAL_DATA
+    //SUBMODEL_TECHNICAL_DATA
     public static final String SUBMODEL_TECHNICAL_DATA_PROPERTY_ID_SHORT = "MaxRotationSpeed";
     public static final String SUBMODEL_TECHNICAL_DATA_ID_SHORT = "TechnicalData";
     public static final String SUBMODEL_TECHNICAL_DATA_ID = "http://i40.customer.com/type/1/1/7A7104BDAB57E184";
@@ -65,7 +35,7 @@ public class AASSimple {
     public static final String SUBMODEL_TECHNICAL_DATA_PROPERTY_VALUE = "5000";
     public static final String SUBMODEL_TECHNICAL_DATA_PROPERTY_VALUETYPE = "integer";
 
-    // SUBMODEL_DOCUMENTATION
+    //SUBMODEL_DOCUMENTATION
     private static final String SUBMODEL_DOCUMENTATION_ID_SHORT = "Documentation";
     private static final String SUBMODEL_DOCUMENTATION_ID = "http://i40.customer.com/type/1/1/1A7B62B529F19152";
     private static final String SUBMODEL_DOCUMENTATION_ELEMENTCOLLECTION_SEMANTIC_ID = "www.vdi2770.com/blatt1/Entwurf/Okt18/cd/Document";
@@ -79,7 +49,7 @@ public class AASSimple {
     private static final String SUBMODEL_DOCUMENTATION_FILE_MIMETYPE = "application/pdf";
     private static final String SUBMODEL_DOCUMENTATION_FILE_VALUE = "/aasx/OperatingManual.pdf";
 
-    // SUBMODEL_OPERATIONAL_DATA
+    //SUBMODEL_OPERATIONAL_DATA
     private static final String SUBMODEL_OPERATIONAL_DATA_ID_SHORT = "OperationalData";
     private static final String SUBMODEL_OPERATIONAL_DATA_ID = "http://i40.customer.com/instance/1/1/AC69B1CB44F07935";
     private static final String SUBMODEL_OPERATIONAL_DATA_SEMANTIC_ID_PROPERTY = "http://customer.com/cd/1/1/18EBD56F6B43D895";
@@ -127,18 +97,20 @@ public class AASSimple {
                                             .idType(KeyType.IRI)
                                             .build())
                                     .build())
-                            .build())
+                            .build()
+                    )
                     .defaultThumbnail(new DefaultFile.Builder()
                             .kind(ModelingKind.INSTANCE)
                             .idShort("thumbnail")
                             .mimeType("image/png")
                             .value("https://github.com/admin-shell/io/blob/master/verwaltungsschale-detail-part1.png")
                             .build())
-                    .build())
+                    .build()
+            )
             .submodel(new DefaultReference.Builder()
                     .key(new DefaultKey.Builder()
                             .type(KeyElements.SUBMODEL)
-                            .value("http.//i40.customer.com/type/1/1/7A7104BDAB57E184")
+                            .value("http://i40.customer.com/type/1/1/7A7104BDAB57E184")
                             .idType(KeyType.IRI)
                             .build())
                     .build())

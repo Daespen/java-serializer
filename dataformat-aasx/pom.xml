@@ -20,6 +20,12 @@
 			<artifactId>model</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>io.admin-shell.aas</groupId>
+			<artifactId>dataformat-core</artifactId>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 		</dependency>
