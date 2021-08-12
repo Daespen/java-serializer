@@ -44,6 +44,12 @@
 			<groupId>net.codesup.util</groupId>
 			<artifactId>jaxb2-rich-contract-plugin</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>io.admin-shell.aas</groupId>
+			<artifactId>dataformat-core</artifactId>
+			<classifier>tests</classifier>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -93,7 +99,9 @@
 					</execution>
 					<execution>
 						<id>generate-uatypes-classes</id>
-						<phase>none</phase><!-- currently generated classes do not work properly when nested, namespace is not declared, fixable within package-info thus copy-pasted and manually adjusted -->
+						<phase>none</phase><!-- currently generated classes do not work properly 
+							when nested, namespace is not declared, fixable within package-info thus 
+							copy-pasted and manually adjusted -->
 						<goals>
 							<goal>xsdtojava</goal>
 						</goals>
@@ -114,7 +122,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
-					<!-- excluding generated classes and mappers which are not meant to be used directly -->
+					<!-- excluding generated classes and mappers which are not meant to 
+						be used directly -->
 					<excludePackageNames>com.kscs.util.*:org.opcfoundation.*:io.adminshell.aas.v3.dataformat.i4aas.mappers:io.adminshell.aas.v3.dataformat.i4aas.mappers.*</excludePackageNames>
 				</configuration>
 			</plugin>

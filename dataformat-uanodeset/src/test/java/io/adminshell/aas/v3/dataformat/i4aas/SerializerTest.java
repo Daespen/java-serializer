@@ -25,6 +25,8 @@ import org.junit.Test;
 
 import io.adminshell.aas.v3.dataformat.SerializationException;
 import io.adminshell.aas.v3.dataformat.i4aas.mappers.MappingContext;
+import io.adminshell.aas.v3.dataformat.model.AASFull;
+import io.adminshell.aas.v3.dataformat.model.AASSimple;
 import io.adminshell.aas.v3.model.impl.DefaultAssetAdministrationShellEnvironment;
 
 public class SerializerTest {
