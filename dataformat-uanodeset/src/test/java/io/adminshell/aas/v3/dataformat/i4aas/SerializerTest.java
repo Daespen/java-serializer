@@ -16,17 +16,20 @@
 package io.adminshell.aas.v3.dataformat.i4aas;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import io.adminshell.aas.v3.dataformat.AASFull;
+import io.adminshell.aas.v3.dataformat.AASSimple;
 import io.adminshell.aas.v3.dataformat.SerializationException;
 import io.adminshell.aas.v3.dataformat.i4aas.mappers.MappingContext;
-import io.adminshell.aas.v3.dataformat.model.AASFull;
-import io.adminshell.aas.v3.dataformat.model.AASSimple;
 import io.adminshell.aas.v3.model.impl.DefaultAssetAdministrationShellEnvironment;
 
 public class SerializerTest {
@@ -47,7 +50,7 @@ public class SerializerTest {
 	public void testSimple() throws SerializationException, IllegalArgumentException, IllegalAccessException {
 		I4AASSerializer i4aasSerializer = new I4AASSerializer();
 		String write = i4aasSerializer.write(AASSimple.ENVIRONMENT);
-		for (String toCheck : AASSimple.getContainedStrings()) {
+		for (String toCheck : getContainedStrings(AASSimple.class)) {
 			if (toCheck.toLowerCase().contains("thumbnail")) {
 				//gets remapped to DefaultThumbnail
 				toCheck = "DefaultThumbnail";
@@ -60,6 +63,18 @@ public class SerializerTest {
 		}
 		System.out.println(write);
 	}
+	
+    private static List<String> getContainedStrings(Class<?> testModelClass) throws IllegalArgumentException, IllegalAccessException {
+        List<String> results = new ArrayList<>();
+        for (Field field : testModelClass.getDeclaredFields()) {
+            field.setAccessible(true);
+            if (field.getType() == String.class) {
+                Object object = field.get(null);
+                results.add((String) object);
+            }
+        }
+        return results;
+    }
 
 	@Test
 	public void testSimpleToFile() throws SerializationException, IOException {
