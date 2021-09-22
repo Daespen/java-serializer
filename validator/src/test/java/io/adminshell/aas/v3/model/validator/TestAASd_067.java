@@ -1,5 +1,4 @@
-/*******************************************************************************
- *
+/*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,19 +12,34 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- ******************************************************************************/
-
+ */
 package io.adminshell.aas.v3.model.validator;
-
-import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.*;
-import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+import io.adminshell.aas.v3.model.AssetAdministrationShellEnvironment;
+import io.adminshell.aas.v3.model.ConceptDescription;
+import io.adminshell.aas.v3.model.DataSpecificationIEC61360;
+import io.adminshell.aas.v3.model.DataTypeIEC61360;
+import io.adminshell.aas.v3.model.EmbeddedDataSpecification;
+import io.adminshell.aas.v3.model.IdentifierType;
+import io.adminshell.aas.v3.model.Key;
+import io.adminshell.aas.v3.model.KeyElements;
+import io.adminshell.aas.v3.model.KeyType;
+import io.adminshell.aas.v3.model.LangString;
+import io.adminshell.aas.v3.model.MultiLanguageProperty;
+import io.adminshell.aas.v3.model.Reference;
+import io.adminshell.aas.v3.model.Submodel;
+import io.adminshell.aas.v3.model.impl.DefaultDataSpecificationIEC61360;
+import io.adminshell.aas.v3.model.impl.DefaultEmbeddedDataSpecification;
+import io.adminshell.aas.v3.model.impl.DefaultIdentifier;
+import io.adminshell.aas.v3.model.impl.DefaultMultiLanguageProperty;
+import io.adminshell.aas.v3.model.impl.DefaultSubmodel;
 
 /**
  * Tests the following constraint:

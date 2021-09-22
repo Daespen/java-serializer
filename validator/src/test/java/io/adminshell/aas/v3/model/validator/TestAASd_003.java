@@ -1,5 +1,4 @@
-/*******************************************************************************
- *
+/*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +12,18 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- ******************************************************************************/
-
+ */
 package io.adminshell.aas.v3.model.validator;
 
-import io.adminshell.aas.v3.model.Referable;
-import io.adminshell.aas.v3.model.impl.DefaultSubmodel;
-import org.junit.Ignore;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import io.adminshell.aas.v3.model.Referable;
+import io.adminshell.aas.v3.model.impl.DefaultSubmodel;
 
 /**
  * Tests the following constraint:
@@ -44,7 +41,7 @@ public class TestAASd_003 {
 		DefaultSubmodel smA = (DefaultSubmodel) ConstraintTestHelper.createSubmodel(new ArrayList<>());
 		smA.setIdShort("idShort");
 
-		Referable smB = (DefaultSubmodel) ConstraintTestHelper.createSubmodel(new ArrayList<>());
+		Referable smB = ConstraintTestHelper.createSubmodel(new ArrayList<>());
 		smB.setIdShort("IDSHORT");
 
 		assertTrue(smA.equals(smB)); // TODO: should be true but requires adjustments in the Java Model

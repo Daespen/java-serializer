@@ -1,5 +1,4 @@
-/*******************************************************************************
- *
+/*
  * Copyright (c) 2021 Fraunhofer-Gesellschaft zur Foerderung der angewandten Forschung e. V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,22 +12,21 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- ******************************************************************************/
-
-
+ */
 package io.adminshell.aas.v3.model.validator;
-
-import io.adminshell.aas.v3.model.*;
-import io.adminshell.aas.v3.model.impl.*;
-import org.junit.Ignore;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
+import org.junit.Ignore;
+import org.junit.Test;
+
+import io.adminshell.aas.v3.model.Extension;
+import io.adminshell.aas.v3.model.IdentifierType;
+import io.adminshell.aas.v3.model.Referable;
+import io.adminshell.aas.v3.model.impl.DefaultExtension;
+import io.adminshell.aas.v3.model.impl.DefaultIdentifier;
+import io.adminshell.aas.v3.model.impl.DefaultSubmodel;
 
 /**
  * Tests the following constraint:
